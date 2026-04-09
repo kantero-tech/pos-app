@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory POS</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Firebase SDKs -->
+    <!-- Use compat build for broader browser support -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Inventory POS</h1>
+      <div id="inventory-list" class="list"></div>
+      <form id="add-item-form" class="form">
+        <input
+          type="text"
+          id="name"
+          placeholder="Item name"
+          required
+        />
+        <input
+          type="number"
+          id="quantity"
+          placeholder="Quantity"
+          required
+          min="0"
+        />
+        <input
+          type="number"
+          id="price"
+          placeholder="Price (RWF)"
+          required
+          step="0.01"
+          min="0"
+        />
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+    <!-- Firebase configuration and app code -->
+    <script src="firebaseConfig.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
